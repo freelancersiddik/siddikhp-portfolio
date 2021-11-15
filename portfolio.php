@@ -72,7 +72,7 @@ session_start();
         <div class="row  gap-4">
             <?php
             include("assets/_db.php");
-            $sql = "SELECT * FROM diLKSL5tZx.my_project";
+            $sql = "SELECT * FROM `diLKSL5tZx.my_project`";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result)) {
                 while ($row = mysqli_fetch_assoc($result)) { ?>
