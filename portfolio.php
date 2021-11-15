@@ -59,6 +59,55 @@ session_start();
             flex-direction: column;
             min-height: 100vh;
         }
+        
+.img_gallery{
+width: 80%;
+margin: 100px auto 50px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+grid-gap: 30px;
+}
+.img_gallery img{
+    width: 100%;
+    height: 40vh;
+    box-shadow: 0 0 10px  rgba(0, 0,0,0.4);
+    transition: .3s linear;
+
+}
+.img_gallery img:hover{
+    transform: rotate(-15deg) scale(0.8);
+    border-radius: 20px;
+    transition: .3s linear;
+    cursor: pointer;
+
+}
+
+.fullimg_box{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+.fullimg_box img{
+    width: 50%;
+    min-height: auto;
+}
+.closeimage{
+    position: absolute;
+    top: 40px;
+    right:40px;
+    color: #fff;
+    z-index: 1000;
+    font-size: 20px;
+    cursor: pointer;
+}
     </style>
 </head>
 
@@ -69,7 +118,7 @@ session_start();
     include("assets/_navbar.php");
     ?>
     <div class="container my-4">
-        <div class="row  gap-4">
+        <!-- <div class="row  gap-4">
             <?php
             include("assets/_db.php");
             $sql = "SELECT * FROM `my_project`";
@@ -90,7 +139,31 @@ session_start();
                 }
             }
             ?>
+        </div> -->
+        <div class="fullimg_box">
+            <img src="image/projects/image1.jpg" class="fullimg" alt="">
+            <span class="closeimage" onclick="closeFullImg()">X</span>
         </div>
+        <div class="img_gallery">
+            <img src="image/projects/image1.png" alt=" image not found" onclick="openFullImg(this.src)">
+            <img src="image/projects/image2.png" alt=" image not found" onclick="openFullImg(this.src)">
+            
+        </div>
+
+
+        <script>
+            let fullImgBox = document.querySelector(".fullimg_box")
+            let fullimg = document.querySelector(".fullimg")
+
+            function openFullImg(pic) {
+                fullImgBox.style.display = "flex";
+                fullimg.src = pic;
+            }
+
+            function closeFullImg(pic) {
+                fullImgBox.style.display = "none";
+            }
+        </script>
     </div>
     <footer>
         <?php
