@@ -14,7 +14,7 @@ if (isset($_POST['insert'])) {
     $image_ten_loc = $_FILES["project_image"]['tmp_name'];
     $image_store = "image/projects/" . $image_name;
     move_uploaded_file($image_ten_loc, $image_store);
-    $sql = "INSERT INTO `my_project` (`sno`, `project_image`) VALUES (NULL, '$image_name')";
+    $sql = "INSERT INTO `diLKSL5tZx`.`my_project` (`sno`, `project_image`) VALUES (NULL, '$image_name')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         $showAlert = true;
