@@ -59,7 +59,7 @@ session_start();
             flex-direction: column;
             min-height: 100vh;
         }
-        
+/*         
 .img_gallery{
 width: 80%;
 margin: 100px auto 50px;
@@ -108,7 +108,7 @@ grid-gap: 30px;
     font-size: 20px;
     cursor: pointer;
 }
-    </style>
+    </style> */
 </head>
 
 <body>
@@ -118,7 +118,7 @@ grid-gap: 30px;
     include("assets/_navbar.php");
     ?>
     <div class="container my-4">
-        <!-- <div class="row  gap-4">
+        <div class="row  gap-4">
             <?php
             include("assets/_db.php");
             $sql = "SELECT * FROM `diLKSL5tZx`.`my_project`";
@@ -139,8 +139,8 @@ grid-gap: 30px;
                 }
             }
             ?>
-        </div> -->
-        <div class="fullimg_box">
+        </div>
+        <!-- <div class="fullimg_box">
             <img src="image/projects/image1.jpg" class="fullimg" alt="">
             <span class="closeimage" onclick="closeFullImg()">X</span>
         </div>
@@ -148,10 +148,10 @@ grid-gap: 30px;
             <img src="image/projects/image1.png" alt=" image not found" onclick="openFullImg(this.src)">
             <img src="image/projects/image2.png" alt=" image not found" onclick="openFullImg(this.src)">
             
-        </div>
+        </div> -->
 
 
-        <script>
+        <!-- <script>
             let fullImgBox = document.querySelector(".fullimg_box")
             let fullimg = document.querySelector(".fullimg")
 
@@ -163,7 +163,7 @@ grid-gap: 30px;
             function closeFullImg(pic) {
                 fullImgBox.style.display = "none";
             }
-        </script>
+        </script> -->
     </div>
     <footer>
         <?php
