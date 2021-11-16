@@ -107,8 +107,8 @@ grid-gap: 30px;
     z-index: 1000;
     font-size: 20px;
     cursor: pointer;
-}
-    </style> */
+}*/
+    </style>
 </head>
 
 <body>
